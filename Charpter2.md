@@ -21,3 +21,23 @@ Few limition of this
     2.1 form/of/valueOf/getInstance/newInstance/getType/newType/type
 
 Overall, we should should consider static factory method over constructor.
+
+## Item 2: Consider a builder when faced with many constructor parameters
+
+when you're creating an object with many optional parameters, try to use builder.
+The builder pattern is well suited to class hierarchies.
+
+## Item 3: Enforce the singleton property with a private constructor or an enum type
+
+To implement singletons, you need to keep the constructor private and export a public static member to provide access to the sole instance.
+1. It can be either a public final field.
+    1. simple and clear
+2. a public static factory method.
+    1. change your mind about whether the class is a singleton
+    2. can write a generic singleton factory
+    3. a static factory is a method reference can be used as a supplier
+3. declare a single element enum 
+
+## Item 4: Enforce noninstantiability with a private constructor
+
+a utility class can be made noninstantiable by including a private constructor
